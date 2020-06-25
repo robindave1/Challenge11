@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>spacex</title>
+        <link rel="stylesheet" type="text/css" href="Challenge1.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script>
+// Set the date we're counting down to
+var countDownDate = new Date("Aug 17, 2020 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "" + hours + ":"
+  + minutes + ":" + seconds + "";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+   
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Corona infected'],
+          ['Germany', 700000],
+          ['United States', 700000],
+          ['Brazil', 600000],
+          ['Australia', 600000],
+            ['GL', 700000],
+            ['Canada', 700000],
+            ['AF', 600000],
+            ['GA', 600000],
+            ['India', 900000],
+            ['South Africa', 600000],
+          ['France', 700000],
+            ['China',1000000],
+          ['RU', 800000]
+        ]);
+
+        var options = {
+            colorAxis: {colors: ['#000000']},
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+   
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['FUEL', 80],
+          ['CPU', 55],
+          ['M/S', 68]
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 13000);
+        setInterval(function() {
+          data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+          chart.draw(data, options);
+        }, 5000);
+        setInterval(function() {
+          data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
+          chart.draw(data, options);
+        }, 26000);
+      }
+    </script>
+   
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Water',     10],
+          ['Meat',      4],
+          ['Chicken',  2],
+          ['Vegetables', 5],
+          ['Fruit',    3]
+        ]);
+
+        var options = {
+          title: 'On board food and drink supplies',
+        fontName:'monospace',
+        };
+          
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+   
+   
+       <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Male', 'Female',],
+          ['0-20', 1000, 400,],
+          ['20-40', 1170, 460,],
+          ['40-60', 660, 1120,],
+          ['60-80', 1030, 540,]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Ages of the people on board',
+            fontName: 'monospace',
+            fontSize: 20,
+           
+        
+          }
+            
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+   
+   
+    </head>
+   
+    <body>
+       
+        <header>
+        <img src="spacex.png" alt="logo spacex" class="logo">
+            
+        </header>
+        
+        <div class="fullscreen">
+            <div class="timer">
+                <p id="demo"></p>
+                <p id="text">Time to destination</p>
+            </div>
+        
+            <section class="graphbox">
+               <div class="eerste2">
+                    <div id="regions_div"></div>
+                    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+                </div>
+                <div class="laatste2">
+                    
+                    <div id="piechart"></div>
+                    <div id="columnchart_material" style="width: 400px; height: 250px;"></div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <p>&#169;Spacex</p>
+        </footer>    
+        
+        
+    </body>
+</html>

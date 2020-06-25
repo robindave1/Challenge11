@@ -1,0 +1,189 @@
+.logo{
+    width: 250px;
+    
+    
+}
+
+header{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    
+}
+
+p#demo {
+  text-align: center;
+  font-size: 40px;
+  margin-top: 0px;
+    font-family: monospace;
+    color: white;
+}
+
+div.timer{
+    background: rgb(0,82,136);
+background: linear-gradient(0deg, rgba(0,82,136,1) 0%, rgba(0,41,68,1) 100%);
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+p#text{
+     text-align: center;
+  font-size: 16px;
+  margin-top: 0px;
+    font-family: monospace;
+    color: white;
+}
+
+
+section.graphbox{
+    max-width: 100vw;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: White;
+}
+
+#regions_div{
+   max-width: 100%;
+}
+
+#chart_div{
+    max-width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: white;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+#piechart{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+
+
+body{
+    
+}
+
+footer{
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+    padding: 20px;
+}
+
+#columnchart_material{
+    max-width: 100%;
+    padding-left: 80px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+@media only screen and (min-width: 600px){
+    .logo{
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 800px){
+.logo{
+        width: 300px;
+    }
+    
+      p#text{
+      font-size: 20px;
+  }
+     p#demo {
+   font-size: 50px;
+    ;
+    
+    }
+    
+    #columnchart_material{
+        padding-left: 100px;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .fullscreen{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .eerste2{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .laatste2{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .logo{
+        width: 250px;
+    }
+    
+    p#text{
+      font-size: 14px;
+  }
+    p#demo {
+   font-size: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    }
+}
+
+@media only screen and (min-width: 1200px){
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
